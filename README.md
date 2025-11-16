@@ -36,22 +36,22 @@ This project started from a generic inventory template and was customized end-to
 - **Min/Max inventory tracking**
   - Parts include **min** and **max** inventory fields.
   - Sample data sets realistic min/max values for each part.
-  - Part forms (in-house and outsourced) include inputs for `min`, `max`, and `inventory`.
+  - Part forms (in-house and outsourced) include inputs for min, max, and inventory.
   - Persistent storage / configuration updated so new fields are saved and loaded correctly.
-  - Business rule enforced: `min ≤ inventory ≤ max`.
+  - Business rule enforced: min ≤ inventory ≤ max.
 
 - **Validation with user-friendly error messages**
   - When adding or updating a **part**:
-    - Error if `inventory < min`.
-    - Error if `inventory > max`.
+    - Error if inventory < min.
+    - Error if inventory > max.
   - When adding or updating a **product**:
-    - Error if the product’s required part quantities would push any part below its `min` stock level.
+    - Error if the product’s required part quantities would push any part below its min stock level.
   - Errors are displayed directly in the UI so the user can correct the values.
 
 - **Unit tests for inventory rules**
   - `PartTest` in the test package includes unit tests that:
-    - Verify parts cannot be created with inventory less than `min`.
-    - Verify parts cannot be created with inventory greater than `max`.
+    - Verify parts cannot be created with inventory less than min.
+    - Verify parts cannot be created with inventory greater than max.
   - Tests focus on the core business rules around minimum and maximum stock.
 
 - **Cleaned validators**
