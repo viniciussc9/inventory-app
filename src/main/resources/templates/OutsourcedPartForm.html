@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Part Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Outsourced Part Detail</h1>
+
+<form action="#" th:action="@{/showFormAddOutPart}" th:object="${outsourcedpart}" method="POST">
+
+    <input type="hidden" th:field="*{id}"/>
+
+    <label for="name">Name</label>
+    <input id="name" type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/>
+
+    <label for="price">Price</label>
+    <input id="price" type="text" th:field="*{price}" placeholder="Price" class="form-control mb-4 col-4"/>
+    <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
+
+    <label for="inv">Inventory</label>
+    <input id="inv" type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/>
+    <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+
+    <label for="min">Min</label>
+    <input id="min" type="text" th:field="*{minInv}" placeholder="Min" class="form-control mb-4 col-4"/>
+    <p th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">Min Error</p>
+
+    <label for="max">Max</label>
+    <input id="max" type="text" th:field="*{maxInv}" placeholder="Max" class="form-control mb-4 col-4"/>
+    <p th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">Max Error</p>
+
+    <label for="companyName">Company Name</label>
+    <input id="companyName" type="text" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/>
+
+    <input type="submit" value="Submit" />
+</form>
+
+<a href="http://localhost:8080/">Link to Main Screen</a>
+</body>
+</html>
+
